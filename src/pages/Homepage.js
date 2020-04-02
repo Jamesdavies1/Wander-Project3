@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 
 function HomePage() {
   return (
@@ -20,3 +20,5 @@ function HomePage() {
     </div>
   );
 }
+
+export default HomePage;
