@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const schema = mongoose.schema;
+const Schema = mongoose.Schema;
 
-const walkSchema = new schema({
+const walkSchema = new Schema({
 name: {type: String, required: true},
 difficulty: {type: String, required: true},
 time: {type: Number, required: true},

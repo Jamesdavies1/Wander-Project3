@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
-const db = require("../models");
 
-// This file inserts the walking locations below into the DB
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/reactrecipes"
@@ -94,8 +92,8 @@ const walks = [
   },
   {
     name: "Congleton Cloud",
-    difficulty: "Medium",
-    time: 2,
+    difficulty: "Easy",
+    time: 1,
     location: "Cheshire"
   },
   {
@@ -123,14 +121,3 @@ const walks = [
     location: "Cheshire"
   }
 ];
-
-db.Recipe.remove({})
-  .then(() => db.Recipe.collection.insertMany(recipeSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
