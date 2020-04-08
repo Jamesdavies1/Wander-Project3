@@ -11,13 +11,6 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
-
-// app.use(routes);
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri,
   {
@@ -30,6 +23,8 @@ mongoose.connect(uri,
     console.log("MongoDB database connection established successfully!");
   })
 
+const walksRouter = require("./routes/walks");
+app.use("/walks", walksRouter);
 
 app.listen(PORT, () =>
   console.log(`API Server now listening on PORT ${PORT}!`)
