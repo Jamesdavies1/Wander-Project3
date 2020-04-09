@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from "react-router-dom";
+
 
 function HomePage() {
   return (
@@ -11,12 +13,16 @@ function HomePage() {
           </p>
         </div>
       </div>
+      <Link to='/SelectWalk'>
       <button type="button" className="btn btn-primary btn-lg">
         Generate Walk
       </button>
+      </Link>
+      <Link to='/CreateWalk'>
       <button type="button" className="btn btn-secondary btn-lg">
         Add New Walk
       </button>
+      </Link>
     </div>
   );
 }
