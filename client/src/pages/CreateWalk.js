@@ -8,25 +8,44 @@ export default class CreateWalks extends Component {
     super(props);
 
     this.onChangeName = this.onChangeName.bind(this);
-    // this.onChangeDifficulty = this.onChangeDifficulty.bind(this);
-    // this.onChangeTime = this.onChangeTime.bind(this);
-    // this.onChangeLocation = this.onChangeLocation.bind(this);
+    this.onChangeDifficulty = this.onChangeDifficulty.bind(this);
+    this.onChangeTime = this.onChangeTime.bind(this);
+    this.onChangeLocation = this.onChangeLocation.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+
+    const avaliableDifficulties = ["easy", "medium", "hard"];
+    const avaliableTimes = [0.5, 1, 2, 4, 6, 8];
+    const avaliableLocations = [
+        "Cheshire",
+        "Lake District",
+        "Peak District",
+        "Scotland",
+        "Snowdonia",
+        "Yorkshire Dales"
+      ];
+
 
     this.state = {
       name: "",
-      difficulty: [],
-      time: [],
-      location: [],
+      selectedDifficulty: ["easy", "medium", "hard"],
+      time: [0.5, 1, 2, 4, 6, 8],
+      location: [
+        "Cheshire",
+        "Lake District",
+        "Peak District",
+        "Scotland",
+        "Snowdonia",
+        "Yorkshire Dales"
+      ]
     };
   }
 
   //react life cycle method
-      componentDidMount() {
-          this.setState({
-              name: "test walk"
-          })
-      }
+  componentDidMount() {
+    this.setState({
+      name: "test walk"
+    });
+  }
 
   //change name
   onChangeName(e) {
@@ -36,28 +55,30 @@ export default class CreateWalks extends Component {
   }
 
   //change difficulty
-  onChangeDifficulty(e) {
+  onChangeDifficulty(difficulty) {
+      console.log("i have been called with ", difficulty)
     this.setState({
-      difficulty: e.target.value
+      difficulty
     });
-    console.log("hello")
-
   }
 
   //change time
-  onChangeTime(e) {
+  onChangeTime(time) {
+    console.log("i have been called with ", time)
     this.setState({
-      time: e.target.value
+      time
     });
   }
 
   //change location
-  onChangeLocation(e) {
+  onChangeLocation(location) {
+    console.log("i have been called with ", location)
     this.setState({
-      location: e.target.value
+      location
     });
   }
 
+  //button submit method
   onSubmit(e) {
     e.preventDefault();
     const walk = {
@@ -65,10 +86,16 @@ export default class CreateWalks extends Component {
       difficulty: this.state.difficulty,
       time: this.state.time,
       location: this.state.location
-    }
-    console.log(walk)
+    };
+    // console.log(walk);
+    // console.log(JSON.stringify(walk, null, 2));
+    console.log("difficulty: ",JSON.stringify(this.state.difficulty, null, 2));
+    console.log("difficulty: ",JSON.stringify(this.state.time, null, 2));
+    console.log("difficulty: ",JSON.stringify(this.state.location, null, 2));
     window.location = "/";
   }
+
+
   //render html to page
   render() {
     return (
@@ -87,13 +114,11 @@ export default class CreateWalks extends Component {
             <DropDownForm
               contents={["easy", "medium", "hard"]}
               title={"Difficulty level"}
-              value={this.state.difficulty}
               onChange={this.onChangeDifficulty}
             />
             <DropDownForm
               contents={[0.5, 1, 2, 4, 6, 8]}
               title={"Time to complete"}
-              value={this.state.time}
               onChange={this.onChangeTime}
             />
             <DropDownForm
@@ -106,7 +131,6 @@ export default class CreateWalks extends Component {
                 "Yorkshire Dales"
               ]}
               title={"Region of activity"}
-              value={this.state.location}
               onChange={this.onChangeLocation}
             />
           </div>
