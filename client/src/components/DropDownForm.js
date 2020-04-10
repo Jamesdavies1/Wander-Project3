@@ -1,7 +1,7 @@
 import React from "react";
 
 function DropDownForm({contents, title, onChange}) {
-  console.log("title " + title + " onChange " + onChange)
+  // console.log("title " + title + " onChange " + onChange)
   return (
     <select className="form-control form-control-lg" onChange={(e) => onChange(e.target.value)}>
       <option>{title}</option>
