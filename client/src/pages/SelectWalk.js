@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import DropDownForm from "../components/DropDownForm";
+import HomeButton from "../components/HomeButton";
 
 function SelectWalk() {
     return (
@@ -11,6 +12,9 @@ function SelectWalk() {
 <Link to='/GeneratedWalk'>
 <button type="button" class="btn btn-primary btn-lg">Generate walk</button>
 </Link>
+<Link to='/'>
+<HomeButton />
+    </Link>
 
         </div>
     )
