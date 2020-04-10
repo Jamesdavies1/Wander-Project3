@@ -8,6 +8,9 @@ function SelectWalk() {
 <DropDownForm contents={["easy", "medium", "hard"]} title={"Difficulty level"}/>
 <DropDownForm contents={[0.5, 1, 2, 4, 6, 8]} title={"Time to complete"}/>
 <DropDownForm contents={["Cheshire", "Lake District", "Peak District", "Scotland", "Snowdonia", "Yorkshire Dales"]} title={"Region of activity"}/>
+<Link to='/GeneratedWalk'>
+<button type="button" class="btn btn-primary btn-lg">Generate walk</button>
+</Link>
 
         </div>
     )
