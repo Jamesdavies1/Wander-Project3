@@ -23,7 +23,7 @@ router.route("/add").post((req, res) => {
     });
 
     newWalk.save()
-    .then(() => res.json("New walk added!"))
+    .then(() => res.json("New walk now added!"))
     .catch(err => res.status(400).json("error: " + err));
 });
 

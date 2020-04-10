@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import DropDownForm from "../components/DropDownForm";
 import HomeButton from "../components/HomeButton";
+import axios from "axios";
 
 export default class CreateWalks extends Component {
   constructor(props) {
@@ -13,17 +14,16 @@ export default class CreateWalks extends Component {
     this.onChangeLocation = this.onChangeLocation.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
-    const avaliableDifficulties = ["easy", "medium", "hard"];
-    const avaliableTimes = [0.5, 1, 2, 4, 6, 8];
-    const avaliableLocations = [
-        "Cheshire",
-        "Lake District",
-        "Peak District",
-        "Scotland",
-        "Snowdonia",
-        "Yorkshire Dales"
-      ];
-
+    // const avaliableDifficulties = ["easy", "medium", "hard"];
+    // const avaliableTimes = [0.5, 1, 2, 4, 6, 8];
+    // const avaliableLocations = [
+    //   "Cheshire",
+    //   "Lake District",
+    //   "Peak District",
+    //   "Scotland",
+    //   "Snowdonia",
+    //   "Yorkshire Dales"
+    // ];
 
     this.state = {
       name: "",
@@ -41,11 +41,11 @@ export default class CreateWalks extends Component {
   }
 
   //react life cycle method
-  componentDidMount() {
-    this.setState({
-      name: "test walk"
-    });
-  }
+  //   componentDidMount() {
+  //     this.setState({
+  //       name: "test walk"
+  //     });
+  //   }
 
   //change name
   onChangeName(e) {
@@ -56,7 +56,7 @@ export default class CreateWalks extends Component {
 
   //change difficulty
   onChangeDifficulty(difficulty) {
-      console.log("i have been called with ", difficulty)
+    //   console.log("i have been called with ", difficulty)
     this.setState({
       difficulty
     });
@@ -64,7 +64,7 @@ export default class CreateWalks extends Component {
 
   //change time
   onChangeTime(time) {
-    console.log("i have been called with ", time)
+    // console.log("i have been called with ", time)
     this.setState({
       time
     });
@@ -72,7 +72,7 @@ export default class CreateWalks extends Component {
 
   //change location
   onChangeLocation(location) {
-    console.log("i have been called with ", location)
+    // console.log("i have been called with ", location)
     this.setState({
       location
     });
@@ -86,15 +86,18 @@ export default class CreateWalks extends Component {
       difficulty: this.state.difficulty,
       time: this.state.time,
       location: this.state.location
-    };
-    console.log(walk);
+    }
+    console.log(walk)
     // console.log(JSON.stringify(walk, null, 2));
-    console.log("difficulty: ",JSON.stringify(this.state.difficulty, null, 2));
-    console.log("time: ",JSON.stringify(this.state.time, null, 2));
-    console.log("location: ",JSON.stringify(this.state.location, null, 2));
+    // console.log("difficulty: ",JSON.stringify(this.state.difficulty, null, 2));
+    // console.log("time: ",JSON.stringify(this.state.time, null, 2));
+    // console.log("location: ",JSON.stringify(this.state.location, null, 2));
+
+    axios.post("http://localhost:3001/walks/add", walk)
+      .then(res => console.log(res.data));
+
     window.location = "/";
   }
-
 
   //render html to page
   render() {
