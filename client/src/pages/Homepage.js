@@ -9,13 +9,13 @@ function HomePage() {
         <div className="container">
           <h1 className="display-4">Project 3</h1>
           <p className="lead">
-            Catchy Slogan Goes Here
+            Nature walk generator
           </p>
         </div>
       </div>
       <Link to='/SelectWalk'>
       <button type="button" className="btn btn-primary btn-lg">
-        Generate Walk
+        Find Walk
       </button>
       </Link>
       <Link to='/CreateWalk'>
