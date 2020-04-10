@@ -87,11 +87,11 @@ export default class CreateWalks extends Component {
       time: this.state.time,
       location: this.state.location
     };
-    // console.log(walk);
+    console.log(walk);
     // console.log(JSON.stringify(walk, null, 2));
     console.log("difficulty: ",JSON.stringify(this.state.difficulty, null, 2));
-    console.log("difficulty: ",JSON.stringify(this.state.time, null, 2));
-    console.log("difficulty: ",JSON.stringify(this.state.location, null, 2));
+    console.log("time: ",JSON.stringify(this.state.time, null, 2));
+    console.log("location: ",JSON.stringify(this.state.location, null, 2));
     window.location = "/";
   }
 
