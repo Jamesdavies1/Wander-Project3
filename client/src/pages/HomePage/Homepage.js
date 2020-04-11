@@ -1,13 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
+import "./style.css";
 
 function HomePage() {
   return (
     <div>
       <div className="jumbotron jumbotron-fluid">
         <div className="container">
-          <h1 className="display-4">Project 3</h1>
+          <h1 className="display-4"> - Project 3 - </h1>
           <p className="lead">
             Nature walk generator
           </p>
@@ -15,7 +15,7 @@ function HomePage() {
       </div>
       <Link to='/SelectWalk'>
       <button type="button" className="btn btn-primary btn-lg">
-        Find Walk
+        Find a Walk
       </button>
       </Link>
       <Link to='/CreateWalk'>
