@@ -83,7 +83,7 @@ export default class SelectWalks extends Component {
     // console.log("time: ",JSON.stringify(this.state.time, null, 2));
     // console.log("location: ",JSON.stringify(this.state.location, null, 2));
 
-    axios.get("http://localhost:3001/walks/", walk)
+    axios.get("http://localhost:3001/api/walks", walk)
       .then(res => console.log(res.data));
 
     window.location = "/GeneratedWalk";
