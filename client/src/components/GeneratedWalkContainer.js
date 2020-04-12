@@ -21,6 +21,32 @@ export default class GeneratedWalkContainer extends Component{
     }
 
 
+    state = {
+        name:'',
+        difficulty:'',
+        time:'',
+        location:''
+      }
+      
+      componentDidMount = () => {
+        this.getWalkFromDatabase();
+      };
+      
+      
+      getWalkFromDatabase = () => {
+      axios.get("/api/walks")
+      .then((response) => {
+        const data = JSON.stringify(response.data);
+        this.setState({name:'', difficulty:'', time:'', location:''});
+        console.log("data recieved " + data);
+      })
+      .catch(() => {
+        alert("error getting data");
+      });
+      }
+
+
+
   render() {
     return (
       <div className="main-container">
