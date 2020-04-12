@@ -115,7 +115,7 @@ export default class CreateWalks extends Component {
               placeholder="Insert name of walk"
             />
             <DropDownForm
-              contents={["easy", "medium", "hard"]}
+              contents={["Easy", "Medium", "Hard"]}
               title={"Difficulty level"}
               onChange={this.onChangeDifficulty}
             />
