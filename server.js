@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-// const routes = require("./routes");
+const routes = require("./routes/walks");
 
 require('dotenv').config();
 
@@ -23,8 +23,7 @@ mongoose.connect(uri,
     console.log("MongoDB database connection established successfully!");
   })
 
-const walksRouter = require("./routes/walks");
-app.use("/walks", walksRouter);
+app.use(routes);
 
 app.listen(PORT, () =>
   console.log(`API Server now listening on PORT ${PORT}!`)

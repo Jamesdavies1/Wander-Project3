@@ -7,6 +7,8 @@ let Walks = require("../models/walks");
 // .then(walks => res.json(walks))
 // .catch(err => res.status(400).json("error: " + err));
 // });
+
+
 //NEW GET REQUEST
 router.route("/api/walks").get((req, res) => {
   if (req.query.difficulty && req.query.time && req.query.location) {

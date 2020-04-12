@@ -93,7 +93,7 @@ export default class CreateWalks extends Component {
     // console.log("time: ",JSON.stringify(this.state.time, null, 2));
     // console.log("location: ",JSON.stringify(this.state.location, null, 2));
 
-    axios.post("http://localhost:3001/walks/add", walk)
+    axios.post("api/add", walk)
       .then(res => console.log(res.data));
 
     window.location = "/";
