@@ -1,9 +1,11 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import HomePage from "./pages/Homepage";
+import HomePage from "./pages/HomePage/Homepage";
 import SelectWalk from "./pages/SelectWalk";
 import CreateWalk from "./pages/CreateWalk";
 import GeneratedWalk from "./pages/GeneratedWalk";
+import "./pages/HomePage/style.css";
+
 
 
 function App() {

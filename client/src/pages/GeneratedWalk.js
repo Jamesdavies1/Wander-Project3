@@ -1,9 +1,19 @@
 import React from "react";
+import {Link} from "react-router-dom";
+import GeneratedWalkContainer from "../components/GeneratedWalkContainer";
+import HomeButton from "../components/HomeButton";
+
+
 
 
 function GeneratedWalk() {
     return (
-        <p>I am the generated walk page</p>
+        <div>
+        <GeneratedWalkContainer />
+        <Link to='/'>
+        <HomeButton />
+        </Link>
+        </div>
     )
 }
 
