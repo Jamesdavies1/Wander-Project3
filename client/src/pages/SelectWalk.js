@@ -25,16 +25,10 @@ export default class SelectWalks extends Component {
     // ];
 
     this.state = {
-      selectedDifficulty: ["easy", "medium", "hard"],
-      time: [0.5, 1, 2, 4, 6, 8],
-      location: [
-        "Cheshire",
-        "Lake District",
-        "Peak District",
-        "Scotland",
-        "Snowdonia",
-        "Yorkshire Dales"
-      ]
+      name: '',
+      difficulty: '',
+      time: 0,
+      location: ''
     };
   }
 
@@ -83,10 +77,10 @@ export default class SelectWalks extends Component {
     // console.log("time: ",JSON.stringify(this.state.time, null, 2));
     // console.log("location: ",JSON.stringify(this.state.location, null, 2));
 
-    axios.get("http://localhost:3001/api/walks", walk)
+    axios.get("/api/walks?difficulty="+this.state.difficulty+"&location="+this.state.location+"&time="+this.state.time)
       .then(res => console.log(res.data));
 
-    window.location = "/GeneratedWalk";
+    // window.location = "/GeneratedWalk";
   }
 
   //render html to page
@@ -96,7 +90,7 @@ export default class SelectWalks extends Component {
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <DropDownForm
-              contents={["easy", "medium", "hard"]}
+              contents={["Easy", "Medium", "Hard"]}
               title={"Difficulty level"}
               onChange={this.onChangeDifficulty}
             />

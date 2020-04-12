@@ -1,6 +1,6 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import HomePage from "./pages/HomePage/Homepage";
 import SelectWalk from "./pages/SelectWalk";
 import CreateWalk from "./pages/CreateWalk";
