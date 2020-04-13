@@ -78,7 +78,7 @@ export default class SelectWalks extends Component {
     // console.log("location: ",JSON.stringify(this.state.location, null, 2));
 
     axios.get("/api/walks?difficulty="+this.state.difficulty+"&location="+this.state.location+"&time="+this.state.time)
-      .then(res => console.log(res.data));
+      .then(res => console.log(res.data[Math.floor(Math.random() * res.data.length)]));
 
     // window.location = "/GeneratedWalk";
   }
