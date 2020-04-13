@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import axios from "axios";
 import { stringify } from "querystring";
+import "../pages/HomePage/style.css";
 
 export default class GeneratedWalkContainer extends Component {
   constructor(props) {
@@ -52,29 +53,26 @@ export default class GeneratedWalkContainer extends Component {
             <h1 className="display-4">{this.props.selectedWalk.name}</h1>
           </div>
         </div>
-        <div>
+        <div className="card-container">
           <ul>
             <div className="card">
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">Difficulty:</li>
                 <li className="list-group-item">
-                  {this.props.selectedWalk.difficulty}
+                  Difficulty: {this.props.selectedWalk.difficulty}
                 </li>
               </ul>
             </div>
             <div className="card">
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">Hours to complete:</li>
                 <li className="list-group-item">
-                  {this.props.selectedWalk.time}
+                  Hours to complete: {this.props.selectedWalk.time}
                 </li>
               </ul>
             </div>
             <div className="card">
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">Location:</li>
                 <li className="list-group-item">
-                  {this.props.selectedWalk.location}
+                  Location: {this.props.selectedWalk.location}
                 </li>
               </ul>
             </div>
