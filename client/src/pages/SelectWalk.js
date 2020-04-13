@@ -113,46 +113,44 @@ export default class SelectWalks extends Component {
         }}
       />
     ) : (
-      <Router>
-        <div>
-          <form onSubmit={this.onSubmit}>
-            <div className="form-group">
-              <DropDownForm
-                contents={["Easy", "Medium", "Hard"]}
-                title={"Difficulty level"}
-                onChange={this.onChangeDifficulty}
-              />
-              <DropDownForm
-                contents={[0.5, 1, 2, 4, 6, 8]}
-                title={"Time to complete"}
-                onChange={this.onChangeTime}
-              />
-              <DropDownForm
-                contents={[
-                  "Cheshire",
-                  "Lake District",
-                  "Peak District",
-                  "Scotland",
-                  "Snowdonia",
-                  "Yorkshire Dales"
-                ]}
-                title={"Region of activity"}
-                onChange={this.onChangeLocation}
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="submit"
-                value="Find a walk!"
-                className="btn btn-primary btn-lg"
-              />
-            </div>
-          </form>
-          <Link to="/">
-            <HomeButton />
-          </Link>
-        </div>
-      </Router>
+      <div>
+        <form onSubmit={this.onSubmit}>
+          <div className="form-group">
+            <DropDownForm
+              contents={["Easy", "Medium", "Hard"]}
+              title={"Difficulty level"}
+              onChange={this.onChangeDifficulty}
+            />
+            <DropDownForm
+              contents={[0.5, 1, 2, 4, 6, 8]}
+              title={"Time to complete"}
+              onChange={this.onChangeTime}
+            />
+            <DropDownForm
+              contents={[
+                "Cheshire",
+                "Lake District",
+                "Peak District",
+                "Scotland",
+                "Snowdonia",
+                "Yorkshire Dales"
+              ]}
+              title={"Region of activity"}
+              onChange={this.onChangeLocation}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="submit"
+              value="Find a walk!"
+              className="btn btn-primary btn-lg"
+            />
+          </div>
+        </form>
+        <Link to="/">
+          <HomeButton />
+        </Link>
+      </div>
     );
   }
 }
