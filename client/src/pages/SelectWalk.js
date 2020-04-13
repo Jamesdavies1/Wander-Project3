@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import DropDownForm from "../components/DropDownForm";
 import HomeButton from "../components/HomeButton";
 import axios from "axios";
-
+import { BrowserRouter as Router, Redirect, Link } from "react-router-dom";
 export default class SelectWalks extends Component {
   constructor(props) {
     super(props);
@@ -25,10 +24,12 @@ export default class SelectWalks extends Component {
     // ];
 
     this.state = {
-      name: '',
-      difficulty: '',
+      name: "",
+      difficulty: "",
       time: 0,
-      location: ''
+      location: "",
+      shouldRedirect: false,
+      selectedWalk: null
     };
   }
 
@@ -70,61 +71,88 @@ export default class SelectWalks extends Component {
       difficulty: this.state.difficulty,
       time: this.state.time,
       location: this.state.location
-    }
-    console.log(walk)
+    };
+    console.log(walk);
     // console.log(JSON.stringify(walk, null, 2));
     // console.log("difficulty: ",JSON.stringify(this.state.difficulty, null, 2));
     // console.log("time: ",JSON.stringify(this.state.time, null, 2));
     // console.log("location: ",JSON.stringify(this.state.location, null, 2));
 
-    axios.get("/api/walks?difficulty="+this.state.difficulty+"&location="+this.state.location+"&time="+this.state.time)
-      .then(res => console.log(res.data[Math.floor(Math.random() * res.data.length)]));
+    axios
+      .get(
+        "/api/walks?difficulty=" +
+          this.state.difficulty +
+          "&location=" +
+          this.state.location +
+          "&time=" +
+          this.state.time
+      )
+      .then(res => {
+        const selectedWalk =
+          res.data[Math.floor(Math.random() * res.data.length)];
+        this.setState({ selectedWalk, shouldRedirect: true });
+      });
 
-    // window.location = "/GeneratedWalk";
+    // render () {
+    //   return (
+    //      <div>
+    //       {this.renderRedirect()}
+    //       <button onClick={this.setRedirect}>Redirect</button>
+    //      </div>
+    //   )
+    // };
   }
 
   //render html to page
   render() {
-    return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <DropDownForm
-              contents={["Easy", "Medium", "Hard"]}
-              title={"Difficulty level"}
-              onChange={this.onChangeDifficulty}
-            />
-            <DropDownForm
-              contents={[0.5, 1, 2, 4, 6, 8]}
-              title={"Time to complete"}
-              onChange={this.onChangeTime}
-            />
-            <DropDownForm
-              contents={[
-                "Cheshire",
-                "Lake District",
-                "Peak District",
-                "Scotland",
-                "Snowdonia",
-                "Yorkshire Dales"
-              ]}
-              title={"Region of activity"}
-              onChange={this.onChangeLocation}
-            />
-          </div>
-
-          <div className="form-group">
-            <input
-              type="submit"
-              value="Generate walk!"
-              className="btn btn-primary btn-lg"
-            />
-          </div>
-        </form>
-        <Link to="/">
-          <HomeButton />
-        </Link>
-      </div>
+    return this.state.shouldRedirect ? (
+      <Redirect
+        to={{
+          pathname: "/GeneratedWalk",
+          state: { selectedWalk: this.state.selectedWalk }
+        }}
+      />
+    ) : (
+      <Router>
+        <div>
+          <form onSubmit={this.onSubmit}>
+            <div className="form-group">
+              <DropDownForm
+                contents={["Easy", "Medium", "Hard"]}
+                title={"Difficulty level"}
+                onChange={this.onChangeDifficulty}
+              />
+              <DropDownForm
+                contents={[0.5, 1, 2, 4, 6, 8]}
+                title={"Time to complete"}
+                onChange={this.onChangeTime}
+              />
+              <DropDownForm
+                contents={[
+                  "Cheshire",
+                  "Lake District",
+                  "Peak District",
+                  "Scotland",
+                  "Snowdonia",
+                  "Yorkshire Dales"
+                ]}
+                title={"Region of activity"}
+                onChange={this.onChangeLocation}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="submit"
+                value="Find a walk!"
+                className="btn btn-primary btn-lg"
+              />
+            </div>
+          </form>
+          <Link to="/">
+            <HomeButton />
+          </Link>
+        </div>
+      </Router>
     );
   }
 }
