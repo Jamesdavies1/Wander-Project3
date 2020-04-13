@@ -1,6 +1,9 @@
 {
   "name": "project-3",
   "version": "0.1.0",
+  "engines": {
+    "node": "v12.14.x"
+  },
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
@@ -20,8 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "./node_modules/bower/bin/bower install && npm run build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
