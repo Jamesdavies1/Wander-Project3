@@ -8,6 +8,7 @@ function GeneratedWalk(props) {
     <div>
       <GeneratedWalkContainer
         selectedWalk={props.location.state.selectedWalk}
+        availableWalks={props.location.state.availableWalks}
       />
       <Link to="/">
         <HomeButton />

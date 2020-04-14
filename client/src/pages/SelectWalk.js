@@ -29,6 +29,7 @@ export default class SelectWalks extends Component {
       time: 0,
       location: "",
       shouldRedirect: false,
+      availableWalks: [],
       selectedWalk: null
     };
   }
@@ -90,7 +91,11 @@ export default class SelectWalks extends Component {
       .then(res => {
         const selectedWalk =
           res.data[Math.floor(Math.random() * res.data.length)];
-        this.setState({ selectedWalk, shouldRedirect: true });
+        this.setState({
+          availableWalks: res.data,
+          selectedWalk,
+          shouldRedirect: true
+        });
       });
 
     // render () {
@@ -109,7 +114,10 @@ export default class SelectWalks extends Component {
       <Redirect
         to={{
           pathname: "/GeneratedWalk",
-          state: { selectedWalk: this.state.selectedWalk }
+          state: {
+            availableWalks: this.state.availableWalks,
+            selectedWalk: this.state.selectedWalk
+          }
         }}
       />
     ) : (
@@ -117,6 +125,7 @@ export default class SelectWalks extends Component {
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <DropDownForm
+              required
               contents={["Easy", "Medium", "Hard"]}
               title={"Difficulty level"}
               onChange={this.onChangeDifficulty}
