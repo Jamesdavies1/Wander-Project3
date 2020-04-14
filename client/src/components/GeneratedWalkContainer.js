@@ -1,25 +1,25 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-import axios from "axios";
-import { stringify } from "querystring";
+// import axios from "axios";
+// import { stringify } from "querystring";
 
 export default class GeneratedWalkContainer extends Component {
   constructor(props) {
     super(props);
     console.log("I am the props to generated walk container: ", props);
-    console.log(props.selectedWalk.name);
+    // console.log(this.props.selectedWalk.name);
   }
 
-  componentDidMount() {
-    // console.log("I am the state: ", JSON.stringify(this.props, null, 2));
-    // axios.get("/api/walks")
-    // .then(response => {
-    //     this.setState({walks: response.data})
-    // })
-    // .catch((error) => {
-    //     console.log(error);
-    // })
-  }
+  // componentDidMount() {
+  // console.log("I am the state: ", JSON.stringify(this.props, null, 2));
+  // axios.get("/api/walks")
+  // .then(response => {
+  //     this.setState({walks: response.data})
+  // })
+  // .catch((error) => {
+  //     console.log(error);
+  // })
+  // }
 
   // state = {
   //     name:'',
@@ -80,7 +80,11 @@ export default class GeneratedWalkContainer extends Component {
             </div>
           </ul>
         </div>
-        <button type="button" className="btn btn-primary btn-lg">
+        <button
+          onClick={this.refreshResult}
+          type="button"
+          className="btn btn-primary btn-lg"
+        >
           Refresh
         </button>
       </div>
