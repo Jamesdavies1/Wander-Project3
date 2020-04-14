@@ -6,6 +6,7 @@ import React, { Component } from "react";
 export default class GeneratedWalkContainer extends Component {
   constructor(props) {
     super(props);
+    this.refreshResult = this.refreshResult.bind(this);
     console.log("I am the props to generated walk container: ", props);
     // console.log(this.props.selectedWalk.name);
   }
@@ -43,6 +44,10 @@ export default class GeneratedWalkContainer extends Component {
   //     alert("error getting data");
   //   });
   //   }
+
+  refreshResult() {
+    console.log(this.props);
+  }
 
   render() {
     return (

@@ -8,20 +8,21 @@ let Walks = require("../models/walks");
 // .catch(err => res.status(400).json("error: " + err));
 // });
 
-
 //NEW GET REQUEST
-router.route("/api/walks").get((req, res) => {  
-    console.log("I have been triggered by the forntend")
+router.route("/api/walks").get((req, res) => {
   if (req.query.difficulty && req.query.time && req.query.location) {
-    return Walks.find({difficulty: req.query.difficulty, time: req.query.time, location: req.query.location } )
-    .then(walks => res.json(walks))
-    .catch(err => res.status(400).json("error: " + err));
-} else {
+    return Walks.find({
+      difficulty: req.query.difficulty,
+      time: req.query.time,
+      location: req.query.location
+    })
+      .then(walks => res.json(walks))
+      .catch(err => res.status(400).json("error: " + err));
+  } else {
     return Walks.find()
       .then(walks => res.json(walks))
       .catch(err => res.status(400).json("error: " + err));
-}
-
+  }
 });
 
 //POST REQUEST
