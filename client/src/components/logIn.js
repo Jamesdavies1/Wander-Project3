@@ -1,8 +1,38 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class LogInForm extends Component {
   constructor(props) {
     super(props);
+
+    this.emailAddressInput = this.emailAddressInput.bind(this);
+    this.passwordInput = this.passwordInput.bind(this);
+    this.onSubmitLogin = this.onSubmitLogin.bind(this);
+    this.onSubmitCreate = this.onSubmitCreate.bind(this);
+
+    this.state = {
+      email: "",
+      password: ""
+    };
+  }
+
+  emailAddressInput(e) {
+    this.setState({ email: e.target.value });
+  }
+
+  passwordInput(e) {
+    this.setState({
+      password: e.target.value
+    });
+  }
+
+  onSubmitCreate(e) {
+    e.preventDefault();
+    const createdAccount = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    console.log(createdAccount);
   }
 
   render() {
@@ -10,37 +40,31 @@ export default class LogInForm extends Component {
       <div>
         <form>
           <div className="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label htmlFor="exampleInputEmail1">Email address</label>
             <input
               type="email"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
-            <small id="emailHelp" className="form-text text-muted">
-              We'll never share your email with anyone else.
-            </small>
           </div>
           <div className="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label htmlFor="exampleInputPassword1">Password</label>
             <input
               type="password"
               className="form-control"
               id="exampleInputPassword1"
             />
           </div>
-          <div className="form-group form-check">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="exampleCheck1"
-            />
-            <label className="form-check-label" for="exampleCheck1">
-              Check me out
-            </label>
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
+          <button
+            type="submit"
+            value="Create Account"
+            className="btn btn-primary"
+          >
+            Create Account
+          </button>
+          <button type="submit" value="Log In" className="btn btn-primary">
+            Log In
           </button>
         </form>
       </div>

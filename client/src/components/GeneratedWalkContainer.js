@@ -7,8 +7,16 @@ export default class GeneratedWalkContainer extends Component {
   constructor(props) {
     super(props);
     this.refreshResult = this.refreshResult.bind(this);
+    // this.newWalkName = this.newWalkName.name.bind(this);
+    // this.newWalkDifficulty = this.newWalkDifficulty.name.bind(this);
+    // this.newWalkTime = this.newWalkTime.name.bind(this);
+    // this.newWalkLocation = this.newWalkLocation.name.bind(this);
+
     console.log("I am the props to generated walk container: ", props);
     // console.log(this.props.selectedWalk.name);
+    // this.state = {
+    //   isShow: true
+    // };
   }
 
   // componentDidMount() {
@@ -22,12 +30,12 @@ export default class GeneratedWalkContainer extends Component {
   // })
   // }
 
-  // state = {
-  //     name:'',
-  //     difficulty:'',
-  //     time:'',
-  //     location:''
-  //   }
+  state = {
+    name: this.props.selectedWalk.name,
+    difficulty: this.props.selectedWalk.difficulty,
+    time: this.props.selectedWalk.time,
+    location: this.props.selectedWalk.location
+  };
 
   //   componentDidMount = () => {
   //     this.getWalkFromDatabase();
@@ -45,12 +53,17 @@ export default class GeneratedWalkContainer extends Component {
   //   });
   //   }
 
-  refreshResult(e) {
-    e.preventDefault();
+  refreshResult() {
     const availableWalks = this.props.availableWalks;
-    const newSelectedWalk =
-      availableWalks[Math.floor(Math.random() * availableWalks.length)];
-    console.log(newSelectedWalk.name);
+    const { name, difficulty, time, location } = availableWalks[
+      Math.floor(Math.random() * availableWalks.length)
+    ];
+    this.setState({
+      name,
+      difficulty,
+      time,
+      location
+    });
   }
 
   render() {
@@ -62,7 +75,7 @@ export default class GeneratedWalkContainer extends Component {
       <div className="main-container">
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
-            <h1 className="display-4">{this.props.selectedWalk.name}</h1>
+            <h1 className="display-4">{this.state.name}</h1>
           </div>
         </div>
         <div>
@@ -70,25 +83,19 @@ export default class GeneratedWalkContainer extends Component {
             <div className="card">
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">Difficulty:</li>
-                <li className="list-group-item">
-                  {this.props.selectedWalk.difficulty}
-                </li>
+                <li className="list-group-item">{this.state.difficulty}</li>
               </ul>
             </div>
             <div className="card">
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">Hours to complete:</li>
-                <li className="list-group-item">
-                  {this.props.selectedWalk.time}
-                </li>
+                <li className="list-group-item">{this.state.time}</li>
               </ul>
             </div>
             <div className="card">
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">Location:</li>
-                <li className="list-group-item">
-                  {this.props.selectedWalk.location}
-                </li>
+                <li className="list-group-item">{this.state.location}</li>
               </ul>
             </div>
           </ul>
@@ -100,9 +107,19 @@ export default class GeneratedWalkContainer extends Component {
         >
           Refresh
         </button>
+        {/* <NewWalkName newWalkName={newWalkName} isShow={this.state.isShow} /> */}
       </div>
     );
   }
 }
+
+// const NewWalkName = ({ newWalkName, isShow }) =>
+//   isShow ? <h1>{newWalkName}</h1> : null;
+
+// class NewWalk extends Component {
+//   render() {
+//     return <h1>{this.props.newWalkName}</h1>;
+//   }
+// }
 
 //test text

@@ -22,7 +22,7 @@ function HomePage() {
           Add New Walk
         </button>
       </Link>
-      <LogInForm />
+      {/* <LogInForm /> */}
     </div>
   );
 }
