@@ -45,11 +45,19 @@ export default class GeneratedWalkContainer extends Component {
   //   });
   //   }
 
-  refreshResult() {
-    console.log(this.props);
+  refreshResult(e) {
+    e.preventDefault();
+    const availableWalks = this.props.availableWalks;
+    const newSelectedWalk =
+      availableWalks[Math.floor(Math.random() * availableWalks.length)];
+    console.log(newSelectedWalk.name);
   }
 
   render() {
+    // const newWalkName = this.newSelectedWalk.name;
+    // const newWalkDifficulty = this.newSelectedWalk.difficulty;
+    // const newWalkTime = this.newSelectedWalk.time;
+    // const newWalkLocation = this.newSelectedWalk.location;
     return (
       <div className="main-container">
         <div className="jumbotron jumbotron-fluid">
