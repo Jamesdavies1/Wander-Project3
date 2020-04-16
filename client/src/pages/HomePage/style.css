@@ -1,234 +1,281 @@
 body {
-    background-image: url(https://c0.wallpaperflare.com/preview/324/18/321/path-forest-wood-woodland.jpg);
+  background-image: url(https://c0.wallpaperflare.com/preview/324/18/321/path-forest-wood-woodland.jpg);
+}
+
+.leaflet-container {
+  height: 240px;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 50px;
+  border-style: double;
+  box-shadow: 20px;
+  opacity: 0.7;
+  border-radius: 0px;
 }
 
 .title-header {
-    font-weight: 700;
+  font-weight: 800;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 100px;
 }
 
 .sub-title-header {
-    font-weight: 600;
+  font-weight: 600;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 23px;
 }
 
 .jumbotron {
-    color: black;
-    text-align: center;
-    border-style: solid;
-    border-right: 0;
-    border-left: 0;
-    border-top: 0;
-    opacity: 0.5;
+  color: black;
+  text-align: center;
+  opacity: 0.4;
 }
 
-
 .find-a-walk-button {
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    font-weight: 600;
-    opacity: 0.5;
-    width: 90%;
-    margin-left: 5%;
-    height: 80px;
-    margin-top: 10px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  width: 90%;
+  margin-left: 5%;
+  height: 80px;
+  margin-top: 10px;
+  border-radius: 0px;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 50px;
 }
 
 .add-new-walk-button {
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    font-weight: 600;
-    opacity: 0.5;
-    width: 90%;
-    margin-left: 5%;
-    height: 80px;
-    margin-top: 30px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  width: 90%;
+  margin-left: 5%;
+  height: 80px;
+  margin-top: 30px;
+  border-radius: 0px;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 50px;
 }
 
 .accounts-page-button {
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    font-weight: 600;
-    opacity: 0.5;
-    width: 60%;
-    margin-left: 20%;
-    height: 60px;
-    margin-top: 250px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  width: 60%;
+  margin-left: 20%;
+  height: 60px;
+  margin-top: 250px;
+  border-radius: 40px;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 30px;
 }
 
 .add-walk-form-one {
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    font-weight: 600;
-    opacity: 0.5;
-    width: 90%;
-    margin-left: 5%;
-    height: 50px;
-    margin-top: 80px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  width: 90%;
+  margin-left: 5%;
+  height: 50px;
+  margin-top: 80px;
+  border-radius: 0px;
 }
 
 .submit-selected-walk-button {
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    font-weight: 600;
-    opacity: 0.5;
-    width: 90%;
-    margin-left: 5%;
-    height: 80px;
-    margin-top: 110px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  width: 90%;
+  margin-left: 5%;
+  height: 80px;
+  margin-top: 110px;
+  border-radius: 0px;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 28px;
 }
 
 .home-button {
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    font-weight: 600;
-    opacity: 0.5;
-    width: 60%;
-    margin-left: 20%;
-    height: 50px;
-    margin-top: 70px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  width: 60%;
+  margin-left: 20%;
+  height: 50px;
+  margin-top: 70px;
+  border-radius: 40px;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 20px;
 }
 
 .create-walk-text-input {
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    font-weight: 300;
-    font-size: 2ch;
-    opacity: 0.5;
-    width: 90%;
-    margin-left: 5%;
-    height: 50px;
-    margin-top: 20px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  font-weight: 300;
+  font-size: 2ch;
+  opacity: 0.5;
+  width: 90%;
+  margin-left: 5%;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 0px;
 }
 
 .create-new-walk-button {
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    font-weight: 600;
-    opacity: 0.5;
-    width: 90%;
-    margin-left: 5%;
-    height: 80px;
-    margin-top: 110px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  width: 90%;
+  margin-left: 5%;
+  height: 80px;
+  margin-top: 110px;
+  border-radius: 0px;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 50px;
 }
 
 .email-input-form {
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    font-weight: 600;
-    opacity: 0.5;
-    width: 90%;
-    margin-left: 5%;
-    height: 50px;
-    margin-top: 80px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  width: 90%;
+  margin-left: 5%;
+  height: 50px;
+  margin-top: 80px;
+  border-radius: 0px;
 }
 
 .password-input-form {
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    font-weight: 600;
-    opacity: 0.5;
-    width: 90%;
-    margin-left: 5%;
-    height: 50px;
-    margin-top: 80px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  width: 90%;
+  margin-left: 5%;
+  height: 50px;
+  margin-top: 80px;
+  border-radius: 0px;
 }
 
 .log-in-button {
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    font-weight: 600;
-    opacity: 0.5;
-    width: 90%;
-    margin-left: 5%;
-    height: 80px;
-    margin-top: 120px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  width: 90%;
+  margin-left: 5%;
+  height: 80px;
+  margin-top: 120px;
+  border-radius: 0px;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 40px;
 }
 
 .create-account-button {
-    background-color: white;
-    color: black;
-    border-style: solid;
-    border-color: black;
-    font-weight: 600;
-    opacity: 0.5;
-    width: 90%;
-    margin-left: 5%;
-    height: 80px;
-    margin-top: 80px;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  width: 90%;
+  margin-left: 5%;
+  height: 80px;
+  margin-top: 80px;
+  border-radius: 0px;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 40px;
 }
 
 .created-walk-title-container {
-    color: black;
-    text-align: center;
-    border-style: solid;
-    border-right: 0;
-    border-left: 0;
-    border-top: 0;
-    opacity: 0.5;
+  color: black;
+  text-align: center;
+  opacity: 0.4;
 }
 
 .generated-walk-header-text {
-    font-weight: 700;
+  font-weight: 700;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 60px;
 }
 
 .refresh-walk-button {
-    color: black;
-    background-color: white;
-    border-style: solid;
-    border-color: black;
-    font-weight: 600;
-    opacity: 0.5;
-    width: 90%;
-    margin-left: 5%;
-    height: 80px;
-    margin-top: 10px;
-}
-
-.refresh-walk-button:active {
-    background-color: yellow;
+  color: black;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  width: 90%;
+  margin-left: 5%;
+  height: 60px;
+  margin-top: 20px;
+  border-radius: 0px;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 30px;
 }
 
 .generated-walk-difficulty {
-    float: left;
-    width: 33.33%;
-    text-align: center;
-    font-size: 2ch;
-    font-weight: 800;
+  float: left;
+  width: 33.33%;
+  text-align: center;
+  font-size: 2ch;
+  font-weight: 800;
+  border-style: solid;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
 }
 
 .generated-walk-time {
-    float: left;
-    width: 33.33%;
-    text-align: center;
-    font-size: 2ch;
-    font-weight: 800;
+  float: left;
+  width: 33.33%;
+  text-align: center;
+  font-size: 2ch;
+  font-weight: 800;
+  border-style: solid;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
 }
 
 .generated-walk-location {
-    float: left;
-    width: 33.33%;
-    text-align: center;
-    font-size: 2ch;
-    font-weight: 800;
+  float: left;
+  width: 33.33%;
+  text-align: center;
+  font-size: 2ch;
+  font-weight: 800;
+  border-style: solid;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
 }

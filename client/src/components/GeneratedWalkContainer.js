@@ -82,13 +82,19 @@ export default class GeneratedWalkContainer extends Component {
         </div>
         <div>
           <div className="generated-walk-difficulty">
-            <p>{this.state.difficulty}</p>
+            <p>
+              {this.state.difficulty} <i class="fas fa-fist-raised"></i>
+            </p>
           </div>
           <div className="generated-walk-time">
-            <p>{this.state.time}</p>
+            <p>
+              {this.state.time} <i class="fas fa-clock"></i>
+            </p>
           </div>
           <div className="generated-walk-location">
-            <p>{this.state.location}</p>
+            <p>
+              {this.state.location} <i class="fas fa-map-marker-alt"></i>
+            </p>
           </div>
         </div>
         <button
@@ -96,9 +102,8 @@ export default class GeneratedWalkContainer extends Component {
           type="button"
           className="btn btn-primary btn-lg refresh-walk-button"
         >
-          Try again
+          Refresh Adventure
         </button>
-        {/* <NewWalkName newWalkName={newWalkName} isShow={this.state.isShow} /> */}
       </div>
     );
   }

@@ -7,7 +7,7 @@ function HomePage() {
     <div>
       <div className="jumbotron jumbotron-fluid">
         <div className="container">
-          <h1 className="display-4 title-header">Wander</h1>
+          <h1 className="display-4 title-header">wander</h1>
           <p className="lead sub-title-header">where can you explore today?</p>
         </div>
       </div>
