@@ -5,9 +5,9 @@ class Map extends React.Component {
   render() {
     return (
       <LeafletMap
-        center={[50, 10]}
-        zoom={6}
-        maxZoom={10}
+        center={[53.4, -2.3]}
+        zoom={8}
+        maxZoom={15}
         attributionControl={true}
         zoomControl={true}
         doubleClickZoom={true}
@@ -17,7 +17,7 @@ class Map extends React.Component {
         easeLinearity={0.35}
       >
         <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
-        <Marker position={[50, 10]}>
+        <Marker position={[53.4, -2.3]}>
           <Popup>Popup for any custom information.</Popup>
         </Marker>
       </LeafletMap>

@@ -28,17 +28,17 @@ export default class LogInForm extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    console.log("signup has been activated");
-    const createdAccount = {
+    console.log("sign in has been activated");
+    const retrievedAccount = {
       email: this.state.email,
       password: this.state.password
     };
-    console.log(createdAccount);
+    console.log(retrievedAccount);
     axios
-      .post("/api/addUser", createdAccount)
-      .then(res => console.log(res.data));
+      .post("api/Usercheck", retrievedAccount)
+      .then(res => console.log("i am the result " + res.data));
 
-    window.location = "/";
+    // window.location = "/";
   }
 
   render() {
@@ -67,9 +67,9 @@ export default class LogInForm extends Component {
             />
           </div>
           <button
-            name="signup"
+            name="signin"
             type="submit"
-            value="Create Account"
+            value="Sign In"
             className="btn btn-primary create-account-button"
           >
             Sign In

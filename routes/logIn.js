@@ -1,6 +1,23 @@
 const router = require("express").Router();
 let logIn = require("../models/logIn");
 
+//POST REQUEST MATCHING USER INPUT DATA WITH DATABASE DATA
+router.route("/api/Usercheck").post((req, res) => {
+  const suppliedPassword = req.body.password;
+  const email = req.body.email;
+
+  const foundUser = logIn.findOne({ email });
+
+  if (foundUser) {
+    const actualPassword = foundUser.password;
+    if (suppliedPassword === actualPassword) {
+      return res.status(200).send();
+    } else {
+      return res.status(401).send();
+    }
+  }
+});
+
 //GET REQUEST
 router.route("/api/User").get((req, res) => {
   logIn
@@ -8,21 +25,6 @@ router.route("/api/User").get((req, res) => {
     .then(login => res.json(login))
     .catch(err => res.status(400).json("error: " + err));
 });
-
-//NEW GET REQUEST
-// router.route("/api/walks").get((req, res) => {
-//     console.log("I have been triggered by the forntend")
-//   if (req.query.difficulty && req.query.time && req.query.location) {
-//     return Walks.find({difficulty: req.query.difficulty, time: req.query.time, location: req.query.location } )
-//     .then(walks => res.json(walks))
-//     .catch(err => res.status(400).json("error: " + err));
-// } else {
-//     return Walks.find()
-//       .then(walks => res.json(walks))
-//       .catch(err => res.status(400).json("error: " + err));
-// }
-
-// });
 
 //POST REQUEST
 router.route("/api/addUser").post((req, res) => {
