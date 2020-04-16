@@ -83,17 +83,17 @@ export default class GeneratedWalkContainer extends Component {
         <div>
           <div className="generated-walk-difficulty">
             <p>
-              {this.state.difficulty} <i class="fas fa-fist-raised"></i>
+              {this.state.difficulty} <i className="fas fa-fist-raised"></i>
             </p>
           </div>
           <div className="generated-walk-time">
             <p>
-              {this.state.time} <i class="fas fa-clock"></i>
+              {this.state.time} <i className="fas fa-clock"></i>
             </p>
           </div>
           <div className="generated-walk-location">
             <p>
-              {this.state.location} <i class="fas fa-map-marker-alt"></i>
+              {this.state.location} <i className="fas fa-map-marker-alt"></i>
             </p>
           </div>
         </div>
