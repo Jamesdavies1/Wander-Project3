@@ -5,10 +5,10 @@ export default class LogInForm extends Component {
   constructor(props) {
     super(props);
 
-    this.emailAddressInput = this.emailAddressInput.bind(this);
-    this.passwordInput = this.passwordInput.bind(this);
-    this.onSubmitLogin = this.onSubmitLogin.bind(this);
-    this.onSubmitCreate = this.onSubmitCreate.bind(this);
+    // this.emailAddressInput = this.emailAddressInput.bind(this);
+    // this.passwordInput = this.passwordInput.bind(this);
+    // this.onSubmitLogin = this.onSubmitLogin.bind(this);
+    // this.onSubmitCreate = this.onSubmitCreate.bind(this);
 
     this.state = {
       email: "",
@@ -16,34 +16,39 @@ export default class LogInForm extends Component {
     };
   }
 
-  emailAddressInput(e) {
-    this.setState({ email: e.target.value });
-  }
+  // emailAddressInput(e) {
+  //   this.setState({ email: e.target.value });
+  // }
 
-  passwordInput(e) {
-    this.setState({
-      password: e.target.value
-    });
-  }
+  // passwordInput(e) {
+  //   this.setState({
+  //     password: e.target.value
+  //   });
+  // }
 
-  onSubmitCreate(e) {
+  onSubmit(e) {
     e.preventDefault();
+    console.log("i have been activated");
     const createdAccount = {
       email: this.state.email,
       password: this.state.password
     };
     console.log(createdAccount);
+    axios
+      .post("/api/addUser", createdAccount)
+      .then(res => console.log(res.data));
   }
 
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Email address</label>
             <input
               type="email"
               className="form-control"
+              onChange={this.emailAddressInput}
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
@@ -53,6 +58,7 @@ export default class LogInForm extends Component {
             <input
               type="password"
               className="form-control"
+              onChange={this.passwordInput}
               id="exampleInputPassword1"
             />
           </div>
