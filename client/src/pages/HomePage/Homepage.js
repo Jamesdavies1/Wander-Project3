@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LogInForm from "../../components/logIn";
 import "./style.css";
 
 function HomePage() {
@@ -22,7 +21,11 @@ function HomePage() {
           Add New Walk
         </button>
       </Link>
-      <LogInForm />
+      <Link to="Accounts">
+        <button type="button" className="btn btn-secondary btn-lg">
+          Log In
+        </button>
+      </Link>
     </div>
   );
 }
