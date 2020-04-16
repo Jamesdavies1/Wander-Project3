@@ -5,29 +5,29 @@ export default class LogInForm extends Component {
   constructor(props) {
     super(props);
 
-    // this.emailAddressInput = this.emailAddressInput.bind(this);
-    // this.passwordInput = this.passwordInput.bind(this);
-    // this.onSubmitLogin = this.onSubmitLogin.bind(this);
-    // this.onSubmitCreate = this.onSubmitCreate.bind(this);
-
-    this.state = {
-      email: "",
-      password: ""
-    };
+    this.emailAddressInput = this.emailAddressInput.bind(this);
+    this.passwordInput = this.passwordInput.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  // emailAddressInput(e) {
-  //   this.setState({ email: e.target.value });
-  // }
+  state = {
+    email: "",
+    password: ""
+  };
 
-  // passwordInput(e) {
-  //   this.setState({
-  //     password: e.target.value
-  //   });
-  // }
+  emailAddressInput(e) {
+    this.setState({ email: e.target.value });
+  }
+
+  passwordInput(e) {
+    this.setState({
+      password: e.target.value
+    });
+  }
 
   onSubmit(e) {
     e.preventDefault();
+
     console.log("i have been activated");
     const createdAccount = {
       email: this.state.email,
@@ -51,6 +51,7 @@ export default class LogInForm extends Component {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="email address"
+              value={this.state.email}
             />
           </div>
           <div className="form-group">
@@ -60,9 +61,11 @@ export default class LogInForm extends Component {
               onChange={this.passwordInput}
               id="exampleInputPassword1"
               placeholder="password"
+              value={this.state.password}
             />
           </div>
           <button
+            name="singin"
             type="submit"
             value="Log In"
             className="btn btn-primary log-in-button"
@@ -70,6 +73,7 @@ export default class LogInForm extends Component {
             Log In
           </button>
           <button
+            name="signup"
             type="submit"
             value="Create Account"
             className="btn btn-primary create-account-button"

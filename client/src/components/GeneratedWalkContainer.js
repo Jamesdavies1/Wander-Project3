@@ -7,28 +7,7 @@ export default class GeneratedWalkContainer extends Component {
   constructor(props) {
     super(props);
     this.refreshResult = this.refreshResult.bind(this);
-    // this.newWalkName = this.newWalkName.name.bind(this);
-    // this.newWalkDifficulty = this.newWalkDifficulty.name.bind(this);
-    // this.newWalkTime = this.newWalkTime.name.bind(this);
-    // this.newWalkLocation = this.newWalkLocation.name.bind(this);
-
-    console.log("I am the props to generated walk container: ", props);
-    // console.log(this.props.selectedWalk.name);
-    // this.state = {
-    //   isShow: true
-    // };
   }
-
-  // componentDidMount() {
-  // console.log("I am the state: ", JSON.stringify(this.props, null, 2));
-  // axios.get("/api/walks")
-  // .then(response => {
-  //     this.setState({walks: response.data})
-  // })
-  // .catch((error) => {
-  //     console.log(error);
-  // })
-  // }
 
   state = {
     name: this.props.selectedWalk.name,
@@ -36,22 +15,6 @@ export default class GeneratedWalkContainer extends Component {
     time: this.props.selectedWalk.time,
     location: this.props.selectedWalk.location
   };
-
-  //   componentDidMount = () => {
-  //     this.getWalkFromDatabase();
-  //   };
-
-  //   getWalkFromDatabase = () => {
-  //   axios.get("/api/walks")
-  //   .then((response) => {
-  //     const data = JSON.stringify(response.data);
-  //     this.setState({name:'', difficulty:'', time:'', location:''});
-  //     console.log("data recieved " + data);
-  //   })
-  //   .catch(() => {
-  //     alert("error getting data");
-  //   });
-  //   }
 
   refreshResult() {
     const availableWalks = this.props.availableWalks;
@@ -108,14 +71,3 @@ export default class GeneratedWalkContainer extends Component {
     );
   }
 }
-
-// const NewWalkName = ({ newWalkName, isShow }) =>
-//   isShow ? <h1>{newWalkName}</h1> : null;
-
-// class NewWalk extends Component {
-//   render() {
-//     return <h1>{this.props.newWalkName}</h1>;
-//   }
-// }
-
-//test text
