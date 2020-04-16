@@ -1,12 +1,12 @@
 import React from "react";
-import LogInForm from "../components/logIn";
+import SigninForm from "../components/LoginForm";
 import HomeButton from "../components/HomeButton";
 import { Link } from "react-router-dom";
 
-function Accounts() {
+function Signin() {
   return (
     <div>
-      <LogInForm />
+      <SigninForm />
       <Link to="/">
         <HomeButton />
       </Link>
@@ -14,4 +14,4 @@ function Accounts() {
   );
 }
 
-export default Accounts;
+export default Signin;
