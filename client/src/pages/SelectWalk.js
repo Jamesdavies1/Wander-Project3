@@ -127,12 +127,12 @@ export default class SelectWalks extends Component {
             <DropDownForm
               required
               contents={["Easy", "Medium", "Hard"]}
-              title={"Difficulty level"}
+              title={"Difficulty level..."}
               onChange={this.onChangeDifficulty}
             />
             <DropDownForm
               contents={[0.5, 1, 2, 4, 6, 8]}
-              title={"Time to complete"}
+              title={"Available hours..."}
               onChange={this.onChangeTime}
             />
             <DropDownForm
@@ -144,15 +144,15 @@ export default class SelectWalks extends Component {
                 "Snowdonia",
                 "Yorkshire Dales"
               ]}
-              title={"Region of activity"}
+              title={"Region of exploration..."}
               onChange={this.onChangeLocation}
             />
           </div>
           <div className="form-group">
             <input
               type="submit"
-              value="Find a walk!"
-              className="btn btn-primary btn-lg"
+              value="Lets see what awaits... "
+              className="btn btn-primary btn-lg submit-selected-walk-button"
             />
           </div>
         </form>

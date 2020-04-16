@@ -1,15 +1,19 @@
 import React from "react";
 
-function DropDownForm({contents, title, onChange}) {
+function DropDownForm({ contents, title, onChange }) {
   // console.log("title " + title + " onChange " + onChange)
   return (
-    <select className="form-control form-control-lg"  required onChange={(e) => onChange(e.target.value)}>
+    <select
+      className="form-control form-control-lg add-walk-form-one"
+      required
+      onChange={e => onChange(e.target.value)}
+    >
       <option>{title}</option>
-      {
-          contents.map(element => (
-                <option key={element} value={element}>{element}</option>
-            ))
-      }
+      {contents.map(element => (
+        <option key={element} value={element}>
+          {element}
+        </option>
+      ))}
     </select>
   );
 }

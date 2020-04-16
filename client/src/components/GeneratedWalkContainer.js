@@ -73,39 +73,30 @@ export default class GeneratedWalkContainer extends Component {
     // const newWalkLocation = this.newSelectedWalk.location;
     return (
       <div className="main-container">
-        <div className="jumbotron jumbotron-fluid">
+        <div className="jumbotron jumbotron-fluid created-walk-title-container">
           <div className="container">
-            <h1 className="display-4">{this.state.name}</h1>
+            <h1 className="display-4 generated-walk-header-text">
+              {this.state.name}
+            </h1>
           </div>
         </div>
         <div>
-          <ul>
-            <div className="card">
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">Difficulty:</li>
-                <li className="list-group-item">{this.state.difficulty}</li>
-              </ul>
-            </div>
-            <div className="card">
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">Hours to complete:</li>
-                <li className="list-group-item">{this.state.time}</li>
-              </ul>
-            </div>
-            <div className="card">
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">Location:</li>
-                <li className="list-group-item">{this.state.location}</li>
-              </ul>
-            </div>
-          </ul>
+          <div className="generated-walk-difficulty">
+            <p>{this.state.difficulty}</p>
+          </div>
+          <div className="generated-walk-time">
+            <p>{this.state.time}</p>
+          </div>
+          <div className="generated-walk-location">
+            <p>{this.state.location}</p>
+          </div>
         </div>
         <button
           onClick={this.refreshResult}
           type="button"
-          className="btn btn-primary btn-lg"
+          className="btn btn-primary btn-lg refresh-walk-button"
         >
-          Refresh
+          Try again
         </button>
         {/* <NewWalkName newWalkName={newWalkName} isShow={this.state.isShow} /> */}
       </div>

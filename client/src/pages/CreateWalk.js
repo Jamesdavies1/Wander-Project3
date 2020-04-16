@@ -86,15 +86,14 @@ export default class CreateWalks extends Component {
       difficulty: this.state.difficulty,
       time: this.state.time,
       location: this.state.location
-    }
-    console.log(walk)
+    };
+    console.log(walk);
     // console.log(JSON.stringify(walk, null, 2));
     // console.log("difficulty: ",JSON.stringify(this.state.difficulty, null, 2));
     // console.log("time: ",JSON.stringify(this.state.time, null, 2));
     // console.log("location: ",JSON.stringify(this.state.location, null, 2));
 
-    axios.post("api/add", walk)
-      .then(res => console.log(res.data));
+    axios.post("api/add", walk).then(res => console.log(res.data));
 
     window.location = "/";
   }
@@ -108,20 +107,20 @@ export default class CreateWalks extends Component {
             <input
               uref="userInput"
               required
-              className="form-control form-control-lg"
+              className="form-control form-control-lg create-walk-text-input"
               value={this.state.name}
               onChange={this.onChangeName}
               type="text"
-              placeholder="Insert name of walk"
+              placeholder="please insert name of new adventure"
             />
             <DropDownForm
               contents={["Easy", "Medium", "Hard"]}
-              title={"Difficulty level"}
+              title={"Difficulty level..."}
               onChange={this.onChangeDifficulty}
             />
             <DropDownForm
               contents={[0.5, 1, 2, 4, 6, 8]}
-              title={"Time to complete"}
+              title={"Available hours..."}
               onChange={this.onChangeTime}
             />
             <DropDownForm
@@ -133,16 +132,16 @@ export default class CreateWalks extends Component {
                 "Snowdonia",
                 "Yorkshire Dales"
               ]}
-              title={"Region of activity"}
+              title={"Region of exploration..."}
               onChange={this.onChangeLocation}
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group ">
             <input
               type="submit"
-              value="Create new walk"
-              className="btn btn-primary btn-lg"
+              value="Create"
+              className="btn btn-primary btn-lg create-new-walk-button"
             />
           </div>
         </form>

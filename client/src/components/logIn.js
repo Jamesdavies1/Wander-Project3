@@ -44,33 +44,37 @@ export default class LogInForm extends Component {
       <div>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Email address</label>
             <input
               type="email"
-              className="form-control"
+              className="form-control email-input-form"
               onChange={this.emailAddressInput}
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
+              placeholder="email address"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Password</label>
             <input
               type="password"
-              className="form-control"
+              className="form-control password-input-form"
               onChange={this.passwordInput}
               id="exampleInputPassword1"
+              placeholder="password"
             />
           </div>
           <button
             type="submit"
+            value="Log In"
+            className="btn btn-primary log-in-button"
+          >
+            Log In
+          </button>
+          <button
+            type="submit"
             value="Create Account"
-            className="btn btn-primary"
+            className="btn btn-primary create-account-button"
           >
             Create Account
-          </button>
-          <button type="submit" value="Log In" className="btn btn-primary">
-            Log In
           </button>
         </form>
       </div>
