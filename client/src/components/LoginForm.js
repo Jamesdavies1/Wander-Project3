@@ -36,9 +36,7 @@ export default class LogInForm extends Component {
     console.log(retrievedAccount);
     axios
       .post("api/Usercheck", retrievedAccount)
-      .then(res => console.log("i am the result " + res.data));
-
-    // window.location = "/";
+      .then(res => console.log(res.data));
   }
 
   render() {
