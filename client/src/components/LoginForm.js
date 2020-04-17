@@ -38,11 +38,11 @@ export default class LogInForm extends Component {
     // Line 41 you need to route people to the page that you want them to go
     axios
       .post("api/Usercheck", retrievedAccount)
-      .then(res => (window.location = `/?email=${this.state.email}`));
-    alert("Welcome back, " + this.state.email).catch(err => {
-      this.setState({ loginError: true });
-      alert("Incorrect Email or Password. Please try again.");
-    });
+      .then(res => (window.location = `/?email=${this.state.email}`))
+      .catch(err => {
+        this.setState({ loginError: true });
+        alert("Email or Password incorrect.");
+      });
   }
 
   render() {

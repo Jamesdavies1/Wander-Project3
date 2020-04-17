@@ -32,27 +32,23 @@ export default class LogInForm extends Component {
     });
   }
 
-  recaptchaLoaded() {
-    console.log("captcha successfully loaded");
-  }
+  recaptchaLoaded() {}
 
   onSubmit(e) {
     e.preventDefault();
     if (this.state.isVerified) {
-      alert("You have successfully created a new account!");
-      console.log("signup has been activated");
+      alert("New account created.");
       const createdAccount = {
         email: this.state.email,
         password: this.state.password
       };
-      console.log(createdAccount);
       axios
         .post("/api/addUser", createdAccount)
         .then(res => console.log(res.data));
 
       window.location = "/";
     } else {
-      alert("Please verify that you are a real adventurer...");
+      alert("Please verify below.");
     }
   }
 
