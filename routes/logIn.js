@@ -7,6 +7,7 @@ router.route("/api/Usercheck").post(async (req, res) => {
   const email = req.body.email; //passed down email from front end
 
   const foundUser = await logIn.findOne({ email }); //finding user in db by matching given email address and storing in variable
+  console.log("I am the gfound user: ", foundUser);
 
   if (foundUser !== null) {
     const actualPassword = foundUser.password; //assigning found users password to 'actual password'
@@ -16,6 +17,8 @@ router.route("/api/Usercheck").post(async (req, res) => {
       return res.status(401).send(); //return 401 if above does not match
     }
   }
+
+  return res.status(401).send();
 });
 
 //GET REQUEST
