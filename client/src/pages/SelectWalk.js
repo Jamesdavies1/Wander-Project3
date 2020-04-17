@@ -73,11 +73,6 @@ export default class SelectWalks extends Component {
       time: this.state.time,
       location: this.state.location
     };
-    console.log(walk);
-    // console.log(JSON.stringify(walk, null, 2));
-    // console.log("difficulty: ",JSON.stringify(this.state.difficulty, null, 2));
-    // console.log("time: ",JSON.stringify(this.state.time, null, 2));
-    // console.log("location: ",JSON.stringify(this.state.location, null, 2));
 
     axios
       .get(
@@ -97,18 +92,8 @@ export default class SelectWalks extends Component {
           shouldRedirect: true
         });
       });
-
-    // render () {
-    //   return (
-    //      <div>
-    //       {this.renderRedirect()}
-    //       <button onClick={this.setRedirect}>Redirect</button>
-    //      </div>
-    //   )
-    // };
   }
 
-  //render html to page
   render() {
     return this.state.shouldRedirect ? (
       <Redirect

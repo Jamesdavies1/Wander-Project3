@@ -18,7 +18,7 @@ class Map extends React.Component {
       >
         <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
         <Marker position={[53.4, -2.3]}>
-          <Popup>Popup for any custom information.</Popup>
+          <Popup>More features coming soon.</Popup>
         </Marker>
       </LeafletMap>
     );

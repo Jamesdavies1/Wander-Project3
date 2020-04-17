@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
-// import axios from "axios";
-// import { stringify } from "querystring";
 
 export default class GeneratedWalkContainer extends Component {
   constructor(props) {
@@ -30,10 +27,6 @@ export default class GeneratedWalkContainer extends Component {
   }
 
   render() {
-    // const newWalkName = this.newSelectedWalk.name;
-    // const newWalkDifficulty = this.newSelectedWalk.difficulty;
-    // const newWalkTime = this.newSelectedWalk.time;
-    // const newWalkLocation = this.newSelectedWalk.location;
     return (
       <div className="main-container">
         <div className="jumbotron jumbotron-fluid created-walk-title-container">

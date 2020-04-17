@@ -29,13 +29,11 @@ export default class LogInForm extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    console.log("sign in has been activated");
     const retrievedAccount = {
       email: this.state.email,
       password: this.state.password
     };
     console.log(retrievedAccount);
-    // Line 41 you need to route people to the page that you want them to go
     axios
       .post("api/Usercheck", retrievedAccount)
       .then(res => (window.location = `/?email=${this.state.email}`))

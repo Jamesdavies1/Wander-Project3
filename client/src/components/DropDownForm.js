@@ -1,7 +1,6 @@
 import React from "react";
 
 function DropDownForm({ contents, title, onChange }) {
-  // console.log("title " + title + " onChange " + onChange)
   return (
     <select
       className="form-control form-control-lg add-walk-form-one"

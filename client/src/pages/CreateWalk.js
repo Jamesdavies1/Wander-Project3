@@ -14,17 +14,6 @@ export default class CreateWalks extends Component {
     this.onChangeLocation = this.onChangeLocation.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
-    // const avaliableDifficulties = ["easy", "medium", "hard"];
-    // const avaliableTimes = [0.5, 1, 2, 4, 6, 8];
-    // const avaliableLocations = [
-    //   "Cheshire",
-    //   "Lake District",
-    //   "Peak District",
-    //   "Scotland",
-    //   "Snowdonia",
-    //   "Yorkshire Dales"
-    // ];
-
     this.state = {
       name: "",
       selectedDifficulty: ["easy", "medium", "hard"],
@@ -40,45 +29,30 @@ export default class CreateWalks extends Component {
     };
   }
 
-  //react life cycle method
-  //   componentDidMount() {
-  //     this.setState({
-  //       name: "test walk"
-  //     });
-  //   }
-
-  //change name
   onChangeName(e) {
     this.setState({
       name: e.target.value
     });
   }
 
-  //change difficulty
   onChangeDifficulty(difficulty) {
-    //   console.log("i have been called with ", difficulty)
     this.setState({
       difficulty
     });
   }
 
-  //change time
   onChangeTime(time) {
-    // console.log("i have been called with ", time)
     this.setState({
       time
     });
   }
 
-  //change location
   onChangeLocation(location) {
-    // console.log("i have been called with ", location)
     this.setState({
       location
     });
   }
 
-  //button submit method
   onSubmit(e) {
     e.preventDefault();
     const walk = {
@@ -87,18 +61,10 @@ export default class CreateWalks extends Component {
       time: this.state.time,
       location: this.state.location
     };
-    console.log(walk);
-    // console.log(JSON.stringify(walk, null, 2));
-    // console.log("difficulty: ",JSON.stringify(this.state.difficulty, null, 2));
-    // console.log("time: ",JSON.stringify(this.state.time, null, 2));
-    // console.log("location: ",JSON.stringify(this.state.location, null, 2));
-
     axios.post("api/add", walk).then(res => console.log(res.data));
-
     window.location = "/";
   }
 
-  //render html to page
   render() {
     return (
       <div>
