@@ -13,6 +13,12 @@ body {
   border-radius: 0px;
 }
 
+.re-captcha-widget {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
 .title-header {
   font-weight: 800;
   font-family: "Nothing You Could Do", cursive;
