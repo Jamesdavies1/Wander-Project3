@@ -1,4 +1,4 @@
-**Wander (Project 3)
+**Wander (Project 3)**
 
 Wander was designed with every single person in mind. This creation was built to help people of all abilities to get outside and simply,
 
