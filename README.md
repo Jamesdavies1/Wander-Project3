@@ -6,7 +6,7 @@ Wander was designed with every single person in mind. This creation was built to
  
  
  
- ![screenshot](/images/Screenshot 2020-04-18 at 10.05.26.png)
+ ![screenshot](https://github.com/Jamesdavies1/project-3/blob/master/images/Screenshot%202020-04-18%20at%2010.05.26.png)
  
  
  --User story--
