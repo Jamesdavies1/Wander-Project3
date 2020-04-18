@@ -16,9 +16,11 @@ As a keen walker that loves to get outdoors, I want an app that will allow me to
  
  
  
+ 
  **Future updates**
   ![screenshot-of-jira](https://github.com/Jamesdavies1/project-3/blob/master/images/Screenshot%202020-04-18%20at%2010.16.38.png)
 
+ 
  
  
  
