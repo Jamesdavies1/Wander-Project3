@@ -6,13 +6,19 @@ Wander was designed with every single person in mind. This creation was built to
  
  
  
- ![screenshot](https://github.com/Jamesdavies1/project-3/blob/master/images/Screenshot%202020-04-18%20at%2010.05.26.png)
+ ![screenshot-of-app-hp](https://github.com/Jamesdavies1/project-3/blob/master/images/Screenshot%202020-04-18%20at%2010.05.26.png)
  
  
  **User story**
  
 As a keen walker that loves to get outdoors, I want an app that will allow me to easily and quickly provide a place to go, whilst also contributing my knowledge of fantastic walks and beautiful pockets of nature to the whole community.
  
+ 
+ 
+ 
+ **Future updates**
+  ![screenshot-of-jira]()
+
  
  
  
